@@ -346,9 +346,9 @@ function renderMonitor(live, hw, st, eng, h, last, requests, totals, kept) {
       // Reused tokens are not prefetched again. Match the Monitor's existing Prefill metric.
       const fresh = r.prompt_tokens == null ? null : Math.max(0, r.prompt_tokens - (r.reused || 0));
       const prefillRate = fresh > 0 && r.prompt_ms > 0 ? fresh / (r.prompt_ms / 1000) : null;
-      return `<tr><td>${esc(t)}</td><td><span class="st-badge ${cls}">${esc(text)}</span>${proj}</td><td class="num">${fmt(r.prompt_tokens)}</td>
-        <td class="num">${fmt(r.reused)}</td><td class="num">${fmt(r.output_tokens)}</td><td class="num">${fmt(prefillRate)}</td><td class="num">${fmt(r.decode_tok_s, 1)}</td>
-        <td class="num">${hit}</td><td class="num">${fmt(r.duration_s, 1)} s</td></tr>`;
+      return `<tr><td data-label="Time">${esc(t)}</td><td data-label="Status"><span class="st-badge ${cls}">${esc(text)}</span>${proj}</td><td class="num" data-label="Prompt">${fmt(r.prompt_tokens)}</td>
+        <td class="num" data-label="Reused">${fmt(r.reused)}</td><td class="num" data-label="Output">${fmt(r.output_tokens)}</td><td class="num" data-label="Prefill t/s">${fmt(prefillRate)}</td><td class="num" data-label="Decode t/s">${fmt(r.decode_tok_s, 1)}</td>
+        <td class="num" data-label="VRAM hit rate">${hit}</td><td class="num" data-label="Duration">${fmt(r.duration_s, 1)} s</td></tr>`;
     }).join("");
   }
   const all = $("req-all");

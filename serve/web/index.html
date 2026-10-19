@@ -140,8 +140,8 @@
             <button class="st-btn st-btn--secondary" id="req-all" hidden>Show all</button></div>
           <div class="table-wrap" id="req-wrap">
             <table class="st-table">
-              <thead><tr><th>Time</th><th>Status</th><th class="num">Prompt</th><th class="num">Reused</th><th class="num">Output</th>
-                <th class="num" title="New prompt tokens per second, excluding reused cache tokens (engine prompt time)">Prefill t/s</th><th class="num">Decode t/s</th><th class="num" title="While writing the answer: the share of the experts looked up that were already in VRAM. Experts the GPU read over PCIe (--pcie-frac) are not counted in it; their share of all routed experts is shown after it (+N% PCIe)">VRAM hit rate</th><th class="num">Duration</th></tr></thead>
+              <thead><tr><th scope="col">Time</th><th scope="col">Status</th><th scope="col" class="num">Prompt</th><th scope="col" class="num">Reused</th><th scope="col" class="num">Output</th>
+                <th scope="col" class="num" title="New prompt tokens per second, excluding reused cache tokens (engine prompt time)">Prefill t/s</th><th scope="col" class="num">Decode t/s</th><th scope="col" class="num" title="While writing the answer: the share of the experts looked up that were already in VRAM. Experts the GPU read over PCIe (--pcie-frac) are not counted in it; their share of all routed experts is shown after it (+N% PCIe)">VRAM hit rate</th><th scope="col" class="num">Duration</th></tr></thead>
               <tbody id="req-body"><tr><td colspan="9" class="muted">No requests yet</td></tr></tbody>
             </table>
           </div>
